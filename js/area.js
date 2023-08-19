@@ -18,7 +18,7 @@ console.log(area)
 const areaspan =document.getElementById("triangle-area")
 areaspan.innerText=area
 }
-
+// Rectanglele
 function calculateRectangleleArea(){
   const widthField =document.getElementById('rectangle-w')
   const widthValuetext=widthField.value
@@ -35,16 +35,25 @@ function calculateRectangleleArea(){
   const rectangleAreaSpan =document.getElementById('rectangle-area')
   rectangleAreaSpan.innerText=area
 }
-
+// Parallelogram
 function calculateParallelogramArea(){
 
   const base =getInputValue('parallelogram-b')
-  console.log(base)
+  // console.log(base)
 
   const height =getInputValue('parallelogram-h')
-  console.log(height)
+  // console.log(height)
 
   const area =base * height
+  setElementInnerText('parallelogram-area',area)
+}
+
+function calculateEllipseArea(){
+  const firstRadius=getInputValue('first-radius')
+  const secondRadius=getInputValue('second-radius')
+  const area=3.14 *firstRadius * secondRadius
+
+  setElementInnerText('ellipse-area', area)
 }
 
 
@@ -55,6 +64,7 @@ function getInputValue(fieldId){
   return value;
 }
 
-function setElementInnerText(resultId){
+function setElementInnerText(resultId ,area){
   const element =document.getElementById(resultId);
+  element.innerText =area
 }
