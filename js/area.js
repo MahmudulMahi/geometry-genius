@@ -35,3 +35,22 @@ function calculateRectangleleArea(){
   const rectangleAreaSpan =document.getElementById('rectangle-area')
   rectangleAreaSpan.innerText=area
 }
+
+function calculateParallelogramArea(){
+
+  const base =getInputValue('parallelogram-b')
+  console.log(base)
+
+  const height =getInputValue('parallelogram-h')
+  console.log(height)
+
+  const area =base * height
+}
+
+
+function getInputValue(fieldId){
+  const inputField =document.getElementById(fieldId)
+  const inputValueText = inputField.value;
+  const value =parseFloat(inputValueText)
+  return value;
+}
