@@ -30,6 +30,12 @@ function calculateRectangleleArea(){
   const length =parseFloat(lengthValuetext)
   console.log(length)
 
+  // validate
+
+  if(isNaN(width) || isNaN(length)){
+    alert('please insert a number')
+    return
+  }
   const area=width*length
 
   const rectangleAreaSpan =document.getElementById('rectangle-area')
@@ -43,9 +49,15 @@ function calculateParallelogramArea(){
 
   const height =getInputValue('parallelogram-h')
   // console.log(height)
-
+  if(isNaN(base)||isNaN(height)){
+    alert('please insert number')
+    return
+  }
   const area =base * height
   setElementInnerText('parallelogram-area',area)
+
+  // add to calculate 
+  addToCalculationEntry('parallelogram',area)
 }
 
 function calculateEllipseArea(){
@@ -67,4 +79,22 @@ function getInputValue(fieldId){
 function setElementInnerText(resultId ,area){
   const element =document.getElementById(resultId);
   element.innerText =area
+}
+
+// add to calculation
+
+function addToCalculationEntry(areaType,area){
+  console.log(areaType+' '+area)
+    const calculation=document.getElementById('calculation-entry')
+
+    const count = calculation.childElementCount;
+    const p = document.createElement('p')
+    p.classList.add('my-4');
+    // p.innerHTML=areaType + '' +area
+    p.innerHTML=`${count +1}. ${areaType} ${area} cm <sup>2</sup> <button
+    class="btn btn-sm btn-success">Convert</>`
+
+    calculation.appendChild(p)
+
+  
 }
