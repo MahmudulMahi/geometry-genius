@@ -54,3 +54,7 @@ function getInputValue(fieldId){
   const value =parseFloat(inputValueText)
   return value;
 }
+
+function setElementInnerText(resultId){
+  const element =document.getElementById(resultId);
+}
